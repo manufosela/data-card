@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <title>simple-card demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script type="module" src="../simple-card.js"></script>
+    <style>
+      .blocks {
+        display:flex;
+        display-direction:row;
+        flex-wrap: wrap;
+      }
+      .block {
+        display:flex;
+        display-direction:column;
+        flex-wrap: wrap;
+        white-space: normal;
+      }
+      .code {
+        padding: 20px;
+        color:#FFF; 
+        background: #000;
+      }
+      .attributes {
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic simple-card Demo</h3>
+      <div class="blocks">
+        <pre class="block code">
+          <code>
+            &lt;simple-card&gt;&lt;/simple-card&gt;
+          </code>
+        </pre>
+        <pre class="block attributes">
+          <h3>Attributes</h3>
+          <ul>
+            <li>property1 (String)</li>
+            <li>property2 (Number)</li>
+          </ul>
+        </pre>
+      </div>
+
+      <simple-card 
+        group="" 
+        title="Kaihoras" 
+        desc="Registra tus horas"
+        icon="far fa-clock" 
+        url="http://kairosnav.westeurope.cloudapp.azure.com:8081/Account/Principal.aspx" 
+        newtab="false">
+        *IMPORTANTE*
+        *>* Tener el registro actualizado mes a mes y describir con cierto detalle el proyecto. 
+        Cada descripción será al menos de 3-4 líneas y no debe revelar nada confidencial. 
+        Alguien con conocimientos técnicos, sin idea del proyecto, debe entenderlo. 
+        Se pueden añadir urls de repositorios (aunque no se tengan acceso desde fuera) o pantallazos, donde se vea tu usuario.
+        Hay dos razones para hacer este seguimiento:
+        * Saber en qué estás trabajando mes a mes y tu head tenga contexto en caso de conflicto o necesidad de cara a los clientes.
+        * Aplicar a una posible una bonificación por hacer Desarrollo de Software (no mantenimientos)
+      </simple-card>
+    </div>
+  </body>
+</html>
