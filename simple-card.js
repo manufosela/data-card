@@ -1,6 +1,9 @@
-import { LitElement, html, css } from 'lit-element';
+import {
+  LitElement,
+  html,
+  css
+} from 'lit-element';
 import 'fa-icons';
-import snarkdown from 'snarkdown';
 
 /**
  * `simple-card`
@@ -13,17 +16,40 @@ import snarkdown from 'snarkdown';
  */
 
 class SimpleCard extends LitElement {
-  static get is() { return 'simple-card'; }
+  static get is() {
+    return 'simple-card';
+  }
 
   static get properties() {
     return {
-      group: { type: String, attribute: 'group'},
-      title: { type: String, attribute: 'title' },
-      description: { type: String, attribute: 'desc' },
-      url: { type: String, attribute: 'url' },
-      icon: { type: String, attribute: 'icon' },
-      newtab: { type: Boolean, attribute: 'newtab' },
-      moreinfo: { type: String }
+      group: {
+        type: String,
+        attribute: 'group'
+      },
+      title: {
+        type: String,
+        attribute: 'title'
+      },
+      description: {
+        type: String,
+        attribute: 'desc'
+      },
+      url: {
+        type: String,
+        attribute: 'url'
+      },
+      icon: {
+        type: String,
+        attribute: 'icon'
+      },
+      newtab: {
+        type: Boolean,
+        attribute: 'newtab'
+      },
+      moreinfo: {
+        type: String,
+        attribute: 'more-info'
+      }
     };
   }
 
@@ -35,15 +61,23 @@ class SimpleCard extends LitElement {
     this.url = '#';
     this.icon = 'fas fa-cat';
     this.newtab = false;
+    this.moreinfoContent = '';
+  }
 
-    if (this.innerHTML !== '') {
-      let md = this.innerHTML;
-      this.moreinfo = html`${snarkdown(md)}`;
+  connectedCallback() {
+    super.connectedCallback();
+    if (this.moreinfo) {
+      fetch(this.moreinfo)
+        .then(response => response.text())
+        .then(content => {
+          this.moreinfoContent = content;
+          this.shadowRoot.querySelector('.card__more-info').innerHTML = this.moreinfoContent;
+        });
     }
   }
 
   static get styles() {
-    return css`
+    return css `
       :host {
         --card-width: 210px;
         --card-height: 16rem;
@@ -111,6 +145,7 @@ class SimpleCard extends LitElement {
       }
 
       .card__more-info {
+        max-width: 30rem;
         visibility:hidden;
         opacity: 1;
         height: auto;
@@ -120,6 +155,20 @@ class SimpleCard extends LitElement {
         text-align: left;
         border-radius: 1rem;
         color: #575756;
+        position: absolute;
+        z-index: 99;
+        line-height: 1.3;
+      }
+
+      .card__info {
+        display: block;
+        padding: 0.8rem 0.8rem 0 0.8rem;
+        color: #ff7900;
+      }
+
+      .bold-text {
+        font-weight: bold;
+        color: #fff;
       }
     `;
   }
@@ -135,7 +184,7 @@ class SimpleCard extends LitElement {
   }
 
   render() {
-    return html`
+    return html `
       <article class="directory__wrapper--card projects">
         <a class="main__directory--link" href="${this.url}" target="${(this.newtab=="true") ? "_blank" : "_self"}"}>
           <div class="card__wrapper">
@@ -151,7 +200,7 @@ class SimpleCard extends LitElement {
         </a>
         ${this.moreinfo ? html`
         <div class="card__more-info">
-          ${this.moreinfo}
+          ${this.moreinfoContent}
         </div>` : html``}
       </article>
     `;
