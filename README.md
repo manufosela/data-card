@@ -34,6 +34,23 @@ Lit-Element web component description
 * [moreinfo] (String): URL with card's extra information. By default is empty. When url, fetch the contain and create a modal.
 
 
+## Default values CSS Variables
+```
+--card-width: 210px;
+--card-height: 16rem;
+--card-background-color: #ffffff;
+--card-border: #ff7900 solid 5px;
+--card-margin: 1.5rem 0.7rem;
+--card-padding: 1.5rem 0;
+--card-title-padding-bottom: 0.75rem;
+--card-title-size: 24px;
+--card-title-color: #212121;
+--card-description-size: 16px;
+--card-description-color: #575756;
+--card-icon-size: 5.5rem;
+--card-icon-color: #FF7900;
+```
+
 ## Install
 ```
 npm install data-card
