@@ -2794,8 +2794,8 @@ class FaIcon extends LitElement {
 customElements.define('fa-icon', FaIcon);
 
 /**
- * `simple-card`
- * SimpleCard
+ * `data-card`
+ * DataCard
  *
  * @customElement
  * @polymer
@@ -2803,9 +2803,9 @@ customElements.define('fa-icon', FaIcon);
  * @demo demo/index.html
  */
 
-class SimpleCard extends LitElement {
+class DataCard extends LitElement {
   static get is() {
-    return 'simple-card';
+    return 'data-card';
   }
 
   static get properties() {
@@ -2995,5 +2995,5 @@ class SimpleCard extends LitElement {
 
 }
 
-window.customElements.define(SimpleCard.is, SimpleCard);
-//# sourceMappingURL=simple-card.js.map
+window.customElements.define(DataCard.is, DataCard);
+//# sourceMappingURL=data-card.js.map

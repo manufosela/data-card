@@ -6,8 +6,8 @@ import {
 import 'fa-icons';
 
 /**
- * `simple-card`
- * SimpleCard
+ * `data-card`
+ * DataCard
  *
  * @customElement
  * @polymer
@@ -15,9 +15,9 @@ import 'fa-icons';
  * @demo demo/index.html
  */
 
-class SimpleCard extends LitElement {
+class DataCard extends LitElement {
   static get is() {
-    return 'simple-card';
+    return 'data-card';
   }
 
   static get properties() {
@@ -207,4 +207,4 @@ class SimpleCard extends LitElement {
   }
 }
 
-window.customElements.define(SimpleCard.is, SimpleCard);
+window.customElements.define(DataCard.is, DataCard);
