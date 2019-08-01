@@ -3,9 +3,9 @@ import babel from 'rollup-plugin-babel';
 
 export default {
   preserveSymlinks: true,
-	input: ['simple-card.js'],
+	input: ['data-card.js'],
 	output: {
-		file: 'build/simple-card.js',
+		file: 'build/data-card.js',
     format: 'es',
 		sourcemap: true
 	},

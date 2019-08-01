@@ -1,27 +1,27 @@
-# simple-card
+# data-card
 
 Lit-Element web component description
 
 ## Demo
 
 ```
-<h2>Basic simple-card Demo</h2>
+<h2>Basic data-card Demo</h2>
 <h3>Demo</h3>
-<simple-card></simple-card>
+<data-card></data-card>
 
 ```
 <!---
 ```
 <custom-element-demo>
   <template>
-    <link rel="import" href="simple-card.html">
+    <link rel="import" href="data-card.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
 ```
 -->
 ```html
-<simple-card></simple-card>
+<data-card></data-card>
 ```
 ## Attributes
 
@@ -36,7 +36,7 @@ Lit-Element web component description
 
 ## Install
 ```
-npm install simple-card
+npm install data-card
 ```
 
 ## Use
@@ -44,10 +44,10 @@ npm install simple-card
 ```html
 <html>
   <head>
-    <script type="module" src="../simple-card.js"></script>
+    <script type="module" src="../data-card.js"></script>
   </head>
   <body>
-    <simple-card></simple-card>
+    <data-card></data-card>
   </body>
 </html>
 ```

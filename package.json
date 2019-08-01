@@ -1,11 +1,11 @@
 {
-  "name": "simple-card",
-  "description": "Lit-Element webcomponent simple-card",
+  "name": "data-card",
+  "description": "Lit-Element webcomponent data-card",
   "version": "1.0.0",
-  "main": "simple-card.js",
+  "main": "data-card.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/user/simple-card"
+    "url": "https://github.com/user/data-card"
   },
   "author": "@manufosela",
   "license": "Apache 2.0",
@@ -14,9 +14,9 @@
     "lit-element"
   ],
   "bugs": {
-    "url": "https://github.com/user/simple-card/issues"
+    "url": "https://github.com/user/data-card/issues"
   },
-  "homepage": "https://github.com/user/simple-card",
+  "homepage": "https://github.com/user/data-card",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",
     "fa-icons": "^0.1.3",
