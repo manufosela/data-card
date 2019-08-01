@@ -22,8 +22,36 @@ Lit-Element web component description
 -->
 ```html
 <simple-card></simple-card>
-
 ```
+## Attributes
+
+* title (String): Card title.
+* description(String): Card description.
+* url (String): Url to show card information.
+* icon (String): from *fa-icons* colection. 
+* [group] (String): a organization/clasification mode
+* [newtab] (Boolean): by default is false (target "_self"). When true, target is "_blank"
+* [moreinfo] (String): URL with card's extra information. By default is empty. When url, fetch the contain and create a modal.
+
+
+## Install
+```
+npm install simple-card
+```
+
+## Use
+
+```html
+<html>
+  <head>
+    <script type="module" src="../simple-card.js"></script>
+  </head>
+  <body>
+    <simple-card></simple-card>
+  </body>
+</html>
+```
+
 ## Install the Polymer-CLI
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed. Run `npm install` to install your element's dependencies, then run `polymer serve` to serve your element locally.
