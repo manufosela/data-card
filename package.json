@@ -1,7 +1,7 @@
 {
   "name": "data-card",
   "description": "Lit-Element webcomponent data-card",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "data-card.js",
   "repository": {
     "type": "git",
