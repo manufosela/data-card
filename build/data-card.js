@@ -2850,6 +2850,10 @@ class DataCard extends LitElement {
     this.icon = 'fas fa-cat';
     this.newtab = false;
     this.moreinfoContent = '';
+    this.moreinfoPosition = {
+      top: '-500px',
+      left: '-3.5rem'
+    };
   }
 
   connectedCallback() {
@@ -2968,17 +2972,13 @@ class DataCard extends LitElement {
 
     let el = this.shadowRoot.querySelector('.card__more-info');
     el.style.visibility = 'visible';
-    el.style.top = '-200px';
-    el.style.left = '150px';
+    el.style.top = this.moreinfoPosition.top;
+    el.style.left = this.moreinfoPosition.left;
   }
 
   menosinfo() {
     let el = this.shadowRoot.querySelector('.card__more-info');
     el.style.visibility = 'hidden';
-  }
-
-  firstUpdated() {
-    console.log(this.icon);
   }
 
   render() {
