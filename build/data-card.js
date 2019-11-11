@@ -2854,13 +2854,6 @@ class DataCard extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-
-    if (this.moreinfo) {
-      fetch(this.moreinfo).then(response => response.text()).then(content => {
-        this.moreinfoContent = content;
-        this.shadowRoot.querySelector('.card__more-info').innerHTML = this.moreinfoContent;
-      });
-    }
   }
 
   static get styles() {
@@ -2917,11 +2910,15 @@ class DataCard extends LitElement {
         color: var(--card-title-color);
         padding-bottom: var(--card-title-padding-bottom);
         font-size: var(--card-title-size);
+        margin-block-start: 0;
+        margin-block-end: 0.5em;
       }
 
       .card__description {
         font-size: var(--card-description-size);
         color: var(--card-description-color);
+        margin-block-start: 0;
+        margin-block-end: 0.5em;
       }
 
       .card__info {
@@ -2932,6 +2929,7 @@ class DataCard extends LitElement {
       }
 
       .card__more-info {
+        width: 20rem;
         max-width: 30rem;
         visibility:hidden;
         opacity: 1;
@@ -2942,7 +2940,7 @@ class DataCard extends LitElement {
         text-align: left;
         border-radius: 1rem;
         color: #575756;
-        position: absolute;
+        position: relative;
         z-index: 99;
         line-height: 1.3;
       }
@@ -2961,8 +2959,17 @@ class DataCard extends LitElement {
   }
 
   masinfo() {
+    if (this.moreinfo && this.moreinfoContent === '') {
+      fetch(this.moreinfo).then(response => response.text()).then(content => {
+        this.moreinfoContent = content;
+        this.shadowRoot.querySelector('.card__more-info').innerHTML = this.moreinfoContent;
+      });
+    }
+
     let el = this.shadowRoot.querySelector('.card__more-info');
     el.style.visibility = 'visible';
+    el.style.top = '-200px';
+    el.style.left = '150px';
   }
 
   menosinfo() {
