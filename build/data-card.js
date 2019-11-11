@@ -2723,7 +2723,7 @@ class FaIcon extends LitElement {
       },
       src: String,
       style: String,
-      size: Number,
+      size: String,
       pathPrefix: {
         attribute: "path-prefix"
       }
@@ -2768,7 +2768,7 @@ class FaIcon extends LitElement {
     this.iClass = '';
     this.src = '';
     this.style = '';
-    this.size = 19;
+    this.size = '19';
     this.color = '#000';
     this.pathPrefix = "node_modules";
   }
@@ -2975,6 +2975,10 @@ class DataCard extends LitElement {
   menosinfo() {
     let el = this.shadowRoot.querySelector('.card__more-info');
     el.style.visibility = 'hidden';
+  }
+
+  firstUpdated() {
+    console.log(this.icon);
   }
 
   render() {
