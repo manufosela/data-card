@@ -49,6 +49,10 @@ class DataCard extends LitElement {
       moreinfo: {
         type: String,
         attribute: 'more-info'
+      },
+      pathprefix: {
+        type: String,
+        attribute: 'path-prefix'
       }
     };
   }
@@ -63,6 +67,7 @@ class DataCard extends LitElement {
     this.newtab = false;
     this.moreinfoContent = '';
     this.moreinfoPosition = {top: '-500px', left: '-3.5rem'};
+    this.pathprefix = '../node_modules';
   }
 
   connectedCallback() {
@@ -196,7 +201,7 @@ class DataCard extends LitElement {
       <article class="directory__wrapper--card projects">
         <a class="main__directory--link" href="${this.url}" target="${(this.newtab=="true") ? "_blank" : "_self"}"}>
           <div class="card__wrapper">
-            <fa-icon class="${this.icon}" path-prefix="../node_modules" size="5.5rem" color="#ff7900"></fa-icon>  
+            <fa-icon class="${this.icon}" path-prefix="${this.pathprefix}" size="5.5rem" color="#ff7900"></fa-icon>  
             <h3 class="card__title">
               ${this.title}
             </h3>
